@@ -1,4 +1,5 @@
 ﻿using GenericApi.Interface;
+using GenericApi.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,5 +15,13 @@ namespace GenericApi.Controllers
         {
             
         }
+
+        [HttpGet("getall")]
+        public async Task<ActionResult<List<T>>> Getall()
+        {
+            return Ok(await baseService.Getall());
+        }
+
+
     }
 }
